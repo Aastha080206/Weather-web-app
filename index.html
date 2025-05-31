@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌤️ SkyWhiz Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet CSS & JS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+></script>
+
+</head>
+<body>
+  <div class="background-layer"></div>
+  <div class="container">
+   <header>
+  <div class="top-buttons">
+    <button id="locationBtn" class="left">📍 Get My Location</button>
+    <h1>🌤️SkyWhiz</h1>
+    <button id="themeToggle" class="right">🌙 Dark Mode</button>
+  </div>
+
+  <div class="search">
+    <input type="text" id="searchInput" placeholder="Enter city..." />
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <div id="clock" class="clock">--:--:--</div>
+  <div class="add-city">
+    <button id="addCityBtn">➕ Add City / Country</button>
+  </div>
+</header>
+
+    <main class="dashboard">
+      <!-- LEFT SIDE: Current Weather + Forecast + Hourly -->
+      <div class="left-panel">
+        <section id="currentWeather" class="card">
+          <h2>Current Weather</h2>
+          <div id="weatherInfo">Search a city to get started...</div>
+          <div id="windCompass" class="wind-compass">
+         <img src="https://img.icons8.com/ios-filled/50/000000/compass.png" id="compassNeedle" alt="Wind Direction" />
+          <p><span id="windSpeed">--</span> km/h</p>
+          </div>
+        </section>
+        <section id="forecast" class="card">
+          <h2>5-Day Forecast</h2>
+          <div id="forecastCards" class="forecast-grid"></div>
+        </section>
+
+        <section id="hourlyForecast" class="card">
+          <h2>🕒3 Hour Forecast</h2>
+          <div id="hourlyCards" class="hourly-scroll">
+            <!-- Hourly cards will be added here -->
+          </div>
+          
+        </section>
+      </div>
+
+      <!-- RIGHT SIDE: Saved Cities -->
+      <div class="right-panel">
+        <section id="savedCityCards" class="card">
+          <h2>📌 Saved Cities</h2>
+          <div id="citiesContainer" class="cities-grid">
+            <!-- Saved city cards -->
+          </div>
+        </section>
+        <section id="hourlyChartSection" class="card">
+  <h2>📈 Temperature Trend </h2>
+  <div class="chart-wrapper">
+    <canvas id="hourlyChart"></canvas>
+  </div>
+</section>
+
+<section id="map-section" class="card">
+  <h2>📍 City Location Map</h2>
+  <div id="map" class="map-container"></div>
+</section>
+      </div>
+        </main>
+  </div>
+  <!-- Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Your custom script -->
+  <script src="script.js"></script>
+  
+</body>
+</html>
